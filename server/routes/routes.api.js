@@ -1,6 +1,8 @@
 const router  = require('express').Router()
+const coinsRouter = require('../modules/coins/routes')
+const userRouter = require('../modules/users/routes')
 
-router.use('/auth', authRouter)
+router.use('/coins', coinsRouter)
 router.use('/users', userRouter)
 
 

@@ -21,7 +21,6 @@ const userSchema = new Schema({
   image: { type: String },
 
   isActive: { type: Boolean, default: false },
-  ...commonSchema,
 });
 
 module.exports = model("User", userSchema);

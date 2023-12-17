@@ -3,8 +3,6 @@ const controller = require("./controller");
 
 router.post("/", async (req, res, next) => {
   try {
-    req.body.created_by = req.currentUser;
-    req.body.updated_by = req.currentUser;
     req.body.created_at = new Date();
     const result = await controller.create(req.body);
     res.json({ data: result, msg: "success" });

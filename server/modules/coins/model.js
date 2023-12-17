@@ -5,4 +5,4 @@ const coinsShema = new Schema({
   
 });
 
-module.exports = model("Coins", userSchema);
+module.exports = model("Coins", coinsShema);
