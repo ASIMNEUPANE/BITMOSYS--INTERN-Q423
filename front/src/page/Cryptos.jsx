@@ -1,4 +1,3 @@
-// src/components/CryptoList.jsx
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { buyCoin } from '../slices/cryptoSlice';

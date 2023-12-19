@@ -1,4 +1,3 @@
-// src/components/UserPortfolio.jsx
 import React from 'react';
 import { useSelector } from 'react-redux';
 

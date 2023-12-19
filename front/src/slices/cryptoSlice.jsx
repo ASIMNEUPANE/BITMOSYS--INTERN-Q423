@@ -1,4 +1,3 @@
-// src/redux/cryptoSlice.js
 import { createSlice } from '@reduxjs/toolkit';
 
 
@@ -16,7 +15,6 @@ const cryptoSlice = createSlice({
       { id: 8, name: 'Quant (QNT)', price: 80000, image: 'https://cryptologos.cc/logos/quant-qnt-logo.png?v=029' },
       { id: 9, name: 'kava (KAVA)', price: 90000, image: 'https://cryptologos.cc/logos/kava-kava-logo.png?v=029' },
       { id: 10, name: 'FLOKI (FLOKI)', price: 60000, image: 'https://cryptologos.cc/logos/floki-inu-floki-logo.png?v=029' },
-      // Add more cryptocurrency details as needed
     ],
     userPortfolio: [],
   },
