@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./page/Home.jsx";
 import Cryptos from "./page/Cryptos.jsx";
+import Exchange from "./components/Exchange.jsx";
 import Layout from "./Layouts/Layout.jsx";
 
 import { Provider } from "react-redux";
@@ -17,6 +18,7 @@ const router = createBrowserRouter([
     children: [
       { path: "", element: <Home /> },
       { path: "/Cryptos", element: <Cryptos /> },
+      { path: "/exchange/:id", element: <Exchange /> },
     ],
   },
 ]);
