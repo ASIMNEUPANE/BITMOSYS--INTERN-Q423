@@ -2,7 +2,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 
-const Home = () => {
+const UserPortfolio = () => {
   const { userPortfolio } = useSelector((state) => state.crypto);
 
   return (
@@ -19,4 +19,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default UserPortfolio;

@@ -1,9 +1,9 @@
 // src/components/CryptoList.jsx
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { buyCoin } from '../slices/cryptoSlice';
+import { buyCoin } from '../redux/cryptoSlice';
 
-const Cryptos = () => {
+const CryptoList = () => {
   const dispatch = useDispatch();
   const { coins } = useSelector((state) => state.crypto);
 
@@ -29,4 +29,4 @@ const Cryptos = () => {
   );
 };
 
-export default Cryptos;
+export default CryptoList;
