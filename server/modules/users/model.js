@@ -1,7 +1,7 @@
 const { Schema, model } = require("mongoose");
 
 const userSchema = new Schema({
-  name: { type: String, requires: "Full name is required" },
+  name: { type: String, required: "Full name is required" },
   email: {
     type: String,
     trim: true,
@@ -10,16 +10,19 @@ const userSchema = new Schema({
     required: "Email address is required",
   },
   isEmailVerified: { type: Boolean, default: false },
-
-  password: { type: String, default: false, select: false },
+  password: { type: String, select: false },
   roles: {
     type: Array,
     default: ["user"],
     required: true,
   },
-  coins:{type:Array},
-  image: { type: String },
-
+  coins: [
+    {
+      name: String,
+      quantity: Number,
+      price: Number,
+    },
+  ],
   isActive: { type: Boolean, default: false },
 });
 
