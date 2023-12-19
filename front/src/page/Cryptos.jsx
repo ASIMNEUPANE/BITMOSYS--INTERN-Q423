@@ -15,17 +15,26 @@ const Cryptos = () => {
   };
 
   return (
-    <div>
-      <h1>Cryptocurrencies</h1>
-      {coins.map((coin) => (
-        <div key={coin.id}>
-          <img src={coin.image} alt={coin.name} />
-          <h2>{coin.name}</h2>
-          <p>Price: ${coin.price}</p>
-          <button onClick={() => handleBuy(coin.id)}>Buy</button>
+    <div className="bg-gray-200 p-4">
+    <h1 className="text-2xl font-bold mb-4">Cryptocurrencies</h1>
+    {coins.map((coin) => (
+      <div key={coin.id} className="flex items-center mb-4 p-4 bg-white shadow-md">
+        <img src={coin.image} alt={coin.name} className="mr-4" width={50}  />
+        <div>
+          <h2 className="text-lg font-semibold">{coin.name}</h2>
+          <p className="text-gray-600">Price: ${coin.price}</p>
         </div>
-      ))}
-    </div>
+        <button
+          className="bg-blue-500 text-white px-4 py-2 rounded-md mt-2 ml-auto"
+          onClick={() => handleBuy(coin.id)}
+        >
+          Buy
+        </button>
+      </div>
+    ))}
+  </div>
+  
+
   );
 };
 
