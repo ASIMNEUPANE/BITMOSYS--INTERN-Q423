@@ -7,7 +7,7 @@ const Cryptos = () => {
   const { coins } = useSelector((state) => state.crypto);
 
   const handleBuy = (id) => {
-    const quantity = parseInt(prompt('Enter quantity to buy:', 1), 10);
+    const quantity = 1;
     if (!isNaN(quantity) && quantity > 0) {
       dispatch(buyCoin({ id, quantity }));
     }

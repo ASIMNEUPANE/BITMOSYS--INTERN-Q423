@@ -1,53 +1,16 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import Swal from "sweetalert2";
-import {Link} from 'react-router-dom'
+import { exchangeCoin } from "../slices/cryptoSlice";
 
 const Home = () => {
   const { userPortfolio } = useSelector((state) => state.crypto);
   const { coins } = useSelector((state) => state.crypto);
-
+  const dispatch = useDispatch();
 
   const handleExchange = async (id, name) => {
-    const coinOptions = coins.reduce((options, coin) => {
-      options[coin.id] = coin.name;
-      return options;
-    }, {});
-
-    const { value: selectedCoinId } = await Swal.fire({
-      title: `Exchange ${name} with`,
-      input: "select",
-      inputOptions: coinOptions,
-      inputPlaceholder: "Select a cryptocurrency",
-      html: `
-        <div>
-          <input placeholder='Enter the exchange quantity' type = number id="swal-input1" class="swal2-input style="width: 100%;"">
-        </div>
-      `,
-      showCancelButton: true,
-      
-    });
+     dispatch(exchangeCoin({ id: 1, exid: 3 ,quantity:4 }));
   };
-  // const handleExchange = async (id, name) => {
-  //   const coinOptions = coins.reduce((options, coin) => {
-  //     options[coin.id] = coin.name;
-  //     return options;
-  //   }, {});
-
-  //   const { value: selectedCoinId } = await Swal.fire({
-  //     title: `Exchange ${name} with`,
-  //     input: "select",
-  //     inputOptions: coinOptions,
-  //     inputPlaceholder: "Select a cryptocurrency",
-  //     html: `
-  //       <div>
-  //         <input placeholder='Enter the exchange quantity' type = number id="swal-input1" class="swal2-input style="width: 100%;"">
-  //       </div>
-  //     `,
-  //     showCancelButton: true,
-      
-  //   });
-  // };
   return (
     <div class="bg-gray-200 p-4">
       <h1 class="text-2xl font-bold mb-4">User Portfolio</h1>
@@ -61,7 +24,12 @@ const Home = () => {
             <h2 class="text-lg font-semibold">{coin.name}</h2>
             <p class="text-gray-600">Quantity: {coin.quantity}</p>
           </div>
-          <Link to={`/exchange/${coin?.id}`} >Exchange</Link>
+          <button
+            className="bg-blue-500 text-white px-4 py-2 rounded-md mt-2 ml-auto"
+            onClick={() => handleExchange(coin.id, coin.name)}
+          >
+            Exchange
+          </button>
         </div>
       ))}
     </div>
