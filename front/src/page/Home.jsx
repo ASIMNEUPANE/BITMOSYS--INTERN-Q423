@@ -9,7 +9,24 @@ const Home = () => {
   const dispatch = useDispatch();
 
   const handleExchange = async (id, name) => {
-     dispatch(exchangeCoin({ id: 1, exid: 3 ,quantity:4 }));
+    const coinOptions = coins.reduce((options, coin) => {
+      options[(coin.name, coin.id)] = coin.name;
+      return options;
+    }, {});
+
+    const { value: selectedCoinName } = await Swal.fire({
+      title: "Select field validation",
+      input: "select",
+      inputOptions: coinOptions,
+
+      inputPlaceholder: "Select a coins",
+      showCancelButton: true,
+    });
+    if (selectedCoinName) {
+      Swal.fire(`You selected ${selectedCoinName} to be exchange`);
+    }
+
+ await   dispatch(exchangeCoin({ id, exid: Number(selectedCoinName), quantity: 1 }));
   };
   return (
     <div class="bg-gray-200 p-4">

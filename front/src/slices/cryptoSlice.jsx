@@ -92,16 +92,20 @@ const cryptoSlice = createSlice({
       );
 
       if (isCoin && isPortfolioIndex !== -1) {
-        const existingCoin = state.userPortfolio[isPortfolioIndex];
+        const existingCoinIndex = state.userPortfolio.findIndex(
+          (coin) => coin.id === exid
+        );
 
-        if (existingCoin) {
-          state.userPortfolio.splice(isPortfolioIndex, 1, {
-            ...isCoin,
-            quantity: 1,
-          });
+        if (existingCoinIndex !== -1) {
+          // Update the quantity of an existing coin in the portfolio
+          state.userPortfolio[existingCoinIndex].quantity += quantity;
         } else {
-          state.userPortfolio.push({ ...isCoin, quantity:1 });
+          // Add a new coin to the portfolio
+          state.userPortfolio.push({ isCoin, quantity });
         }
+
+        // Remove the exchanged coin from the portfolio
+        state.userPortfolio.splice(isPortfolioIndex, 1);
       }
     },
   },
