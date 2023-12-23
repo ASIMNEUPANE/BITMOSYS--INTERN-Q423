@@ -2,6 +2,8 @@
   "name": "front",
   "private": true,
   "version": "0.0.0",
+  "homepage": "https://asimneupane.github.io/CryptoExchangeHub/",
+
   "type": "module",
   "scripts": {
     "dev": "vite",

@@ -1,18 +1,38 @@
-# React + Vite
+# Project Name
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Description
 
-Currently, two official plugins are available:
+This project is a cryptocurrency exchange platform. It allows users to manage their portfolio and exchange different types of cryptocurrencies.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Key Features
 
+- Portfolio Management: Users can view and manage their cryptocurrency portfolio.
+- Buy Cryptocurrency: Users can buy a certain quantity of a coin.
+- Cryptocurrency Exchange: Users can exchange one type of cryptocurrency for another.
 
+## Tech Stack
 
+- React Router: Used for routing in the application.
+- React: Used for building the user interface.
+- Redux: Used for state management.
+- SweetAlert2: Used for displaying alerts and prompts to the user.
+- Tailwind CSS: Used for styling the application.
 
+## How to Clone and Use
 
-auta tw
-exchange garni ko id chaiyo
-exchange kun sngga garni ho chaiyo
-
-if 1 bitcoin = 2
+1. Clone the repository:
+    ```
+    git clone <repository-url>
+    ```
+2. Navigate into the project directory:
+    ```
+    cd <project-directory>
+    ```
+3. Install the dependencies:
+    ```
+    npm install
+    ```
+4. Start the application:
+    ```
+    npm start
+    ```

@@ -50,7 +50,7 @@ const Home = () => {
         );
       }
     } else {
-      alert("You have insuffiecent amount");
+      alert("You have insufficient amount");
     }
   };
   return (
