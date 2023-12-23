@@ -6,7 +6,23 @@ const Cryptos = () => {
   const dispatch = useDispatch();
   const { coins } = useSelector((state) => state.crypto);
 
-  const handleBuy = (id) => {
+  const handleBuy = async(id) => {
+
+
+// const inputValue = data.ip;
+// const { value: quantity } = await Swal.fire({
+//   title: "Enter your IP address",
+//   input: "text",
+//   inputLabel: "Your IP address",
+//   inputValue,
+//   showCancelButton: true,
+//   inputValidator: (value) => {
+//     if (!value) {
+//       return "You need to write something!";
+//     }
+//   }
+// });
+
     const quantity = 1;
     if (!isNaN(quantity) && quantity > 0) {
       dispatch(buyCoin({ id, quantity }));
