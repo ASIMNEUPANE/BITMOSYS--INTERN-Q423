@@ -116,7 +116,7 @@ const Home = () => {
           <div className="flex flex-col items-center justify-center ">
             <Link to="/cryptos" className="text-black no-underline">
               <h1 className="text-3xl mb-4">No coins!!</h1>
-              <h2 className="text-xl">Click Here to Buy..</h2>
+              <h2 className="text-xl text-blue-500">Click Here to Buy..</h2>
             </Link>
           </div>
         )}
