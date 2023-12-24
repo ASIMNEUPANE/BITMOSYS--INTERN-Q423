@@ -8,7 +8,7 @@ const Cryptos = () => {
   const handleBuy = async (id, name) => {
     const { value: quantity } = await Swal.fire({
       input: "text",
-      inputLabel: "Quantity ",
+      inputLabel: `Buy ${name} `,
       inputPlaceholder: "Enter the Quantity",
     });
     if (quantity) {

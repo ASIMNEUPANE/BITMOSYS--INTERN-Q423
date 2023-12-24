@@ -21,7 +21,7 @@ const Home = () => {
     }, {});
 
     const { value: selectedCoinName } = await Swal.fire({
-      title: "Select field validation",
+      title: `Exchange ${name} with`,
       input: "select",
       inputOptions: coinOptions,
 
