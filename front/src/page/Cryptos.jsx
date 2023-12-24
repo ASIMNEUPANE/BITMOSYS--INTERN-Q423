@@ -1,4 +1,3 @@
-import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import Swal from "sweetalert2";
 import { buyCoin } from "../slices/cryptoSlice";
@@ -13,8 +12,14 @@ const Cryptos = () => {
       inputPlaceholder: "Enter the Quantity",
     });
     if (quantity) {
-      Swal.fire(`  ${quantity} quantity is bought of ${name}`);
       if (quantity && quantity > 0) {
+        Swal.fire({
+          position: "bottom-end",
+          icon: "success",
+          title: "Coins Buy Successfully",
+          showConfirmButton: false,
+          timer: 1500,
+        });
         dispatch(buyCoin({ id, quantity }));
       }
     }
