@@ -34,11 +34,11 @@ const Home = () => {
 
     const { value: quantity } = await Swal.fire({
       input: "number",
-      inputLabel: `Enter ${selectedCoinName} Quantity `,
+      inputLabel: `Enter Quantity `,
       inputPlaceholder: `Enter the Quantity`,
     });
 
-    if (quantity < findQuan.quantity) {
+    if (quantity <= findQuan.quantity) {
       Swal.fire({
         position: "top-end",
         icon: "success",

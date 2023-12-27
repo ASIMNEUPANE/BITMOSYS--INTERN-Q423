@@ -114,7 +114,6 @@ const cryptoSlice = createSlice({
       const existingCoin = state.userPortfolio.find((coin) => coin.id === exid);
 
       if (isCoin && isPortfolioIndex) {
-        
         if (existingCoin) {
           // increase/decrease coins quantity of userPortfolio/coins base on condition
           isPortfolioIndex.quantity -= quantity;
@@ -134,6 +133,11 @@ const cryptoSlice = createSlice({
           isPortfolioIndex.quantity =
             Number(isPortfolioIndex.quantity) - Number(quantity);
           quantity;
+          if (isPortfolioIndex.quantity === 0) {
+            // remove coins fron userPortfolio after the quantity goes to zero
+            state.userPortfolio.splice(isPortfolioIndexes, 1);
+            isCoin.quantity = Number(isCoin.quantity) + Number(quantity);
+          }
         }
       }
     },
