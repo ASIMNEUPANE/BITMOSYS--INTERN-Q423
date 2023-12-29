@@ -105,7 +105,7 @@ const cryptoSlice = createSlice({
       const { id, exid, quantity } = action.payload;
       const isCoin = state.coins.find((coin) => coin.id === exid);
 
-      const isPortfolioIndex = state.userPortfolio.find(
+      const isPortfolio = state.userPortfolio.find(
         (coin) => coin.id === id
       );
       const isPortfolioIndexes = state.userPortfolio.findIndex(
@@ -113,15 +113,15 @@ const cryptoSlice = createSlice({
       );
       const existingCoin = state.userPortfolio.find((coin) => coin.id === exid);
 
-      if (isCoin && isPortfolioIndex) {
+      if (isCoin && isPortfolio) {
         if (existingCoin) {
           // increase/decrease coins quantity of userPortfolio/coins base on condition
-          isPortfolioIndex.quantity -= quantity;
+          isPortfolio.quantity -= quantity;
           existingCoin.quantity =
             Number(existingCoin.quantity) + Number(quantity);
           isCoin.quantity = Number(isCoin.quantity) - Number(quantity);
 
-          if (isPortfolioIndex.quantity === 0) {
+          if (isPortfolio.quantity === 0) {
             // remove coins fron userPortfolio after the quantity goes to zero
             state.userPortfolio.splice(isPortfolioIndexes, 1);
             isCoin.quantity = Number(isCoin.quantity) + Number(quantity);
@@ -130,10 +130,10 @@ const cryptoSlice = createSlice({
           // Add a new coin to the portfolio
           state.userPortfolio.push({ ...isCoin, quantity: Number(quantity) });
           // decrease the quantity of coins
-          isPortfolioIndex.quantity =
-            Number(isPortfolioIndex.quantity) - Number(quantity);
+          isPortfolio.quantity =
+            Number(isPortfolio.quantity) - Number(quantity);
           quantity;
-          if (isPortfolioIndex.quantity === 0) {
+          if (isPortfolio.quantity === 0) {
             // remove coins fron userPortfolio after the quantity goes to zero
             state.userPortfolio.splice(isPortfolioIndexes, 1);
             isCoin.quantity = Number(isCoin.quantity) + Number(quantity);
