@@ -145,6 +145,5 @@ const cryptoSlice = createSlice({
 });
 
 export const { buyCoin, exchangeCoin } = cryptoSlice.actions;
-export const selectCrypto = (state) => state.crypto;
 
 export default cryptoSlice.reducer;
