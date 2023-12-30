@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+
 import Home from "./page/Home.jsx";
 import Cryptos from "./page/Cryptos.jsx";
 import Layout from "./Layouts/Layout.jsx";
